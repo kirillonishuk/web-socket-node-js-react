@@ -1,0 +1,50 @@
+.online {
+    margin: 0 0 10px 30%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-around;
+    background-color: white;
+    box-shadow: 0 0 5px .1px black;
+    color: rgb(62,81,181);
+    width: 150px;
+    max-height: 150px;
+    overflow-y: auto;
+    padding-top: 40px;  
+}
+.online::before {
+    position: absolute;
+    left: 10%;
+    top: 5px;
+    content: 'Users online:';
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+.online::-webkit-scrollbar{
+    width: 5px;
+}
+.online::-webkit-scrollbar-thumb {
+    background: rgb(46, 62, 143); 
+}
+.online::-webkit-scrollbar-thumb:hover {
+    background: rgb(32, 42, 92); 
+}
+.online .user {
+    flex: 0 1 40%;
+    margin: 3px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    cursor: pointer;
+}
+.offline {
+    margin: 0 0 10px 25%;
+    padding-top: 15px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+}

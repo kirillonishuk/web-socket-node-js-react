@@ -1,0 +1,206 @@
+.chat-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 25px auto 0;
+    width: 90%;
+    max-width: 800px;
+    background-color: white;
+    height: 500px;
+    box-shadow: 0 0 3px .1px black;
+    overflow-y: auto;
+}
+
+div.chat-box::-webkit-scrollbar{
+    width: 5px;
+}
+.chat-box::-webkit-scrollbar-thumb {
+    background: rgb(73, 91, 182); 
+}
+.chat-box::-webkit-scrollbar-thumb:hover {
+    background: rgb(39, 55, 136); 
+}
+
+/* Новый пользователь */
+.new-user {
+    margin: 3px 0;
+    align-self: center;
+    display: block;
+    position: relative;
+    font-size: 10px;
+    color: rgb(89, 89, 89);
+}
+.new-user .new-user-name {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Отключение */
+.disc-user {
+    margin: 3px 0;
+    align-self: center;
+    display: block;
+    position: relative;
+    font-size: 10px;
+    color: rgb(89, 89, 89);
+}
+
+.disc-user .disc-user-name {
+    text-decoration: underline;
+}
+
+/* Твоё сообщение */
+.your-private-message {
+    align-self: flex-end;
+    display: block;
+    position: relative;
+    margin: 4px 25px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 4px;
+}
+.your-private-message::after {
+    position: absolute;
+    right: -10px;
+    content: '';
+    border: 10px solid transparent;
+    border-bottom-color: rgba(0, 0, 0, .1);  
+    border-left: 0;
+}
+
+.your-private-message .whose-send-discr {
+    font-size: 10px;
+    color: rgb(84, 84, 84);
+}
+.your-private-message .whose-send-name {
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.your-private-message .whose-send-name::after {
+    font-size: 11px;
+    font-weight: 600;
+    content: ':'
+}
+.your-private-message .message-text {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Для тебя сообщение */
+.for-you-private-message {
+    align-self: flex-start;
+    display: block;
+    position: relative;
+    margin: 4px 25px;
+    padding: 5px;
+    background-color: rgba(12, 100, 0, 0.179);
+    border-radius: 4px;
+}
+.for-you-private-message::before {
+    position: absolute;
+    left: -10px;
+    content: '';
+    border: 10px solid transparent;
+    border-bottom-color: rgba(12, 100, 0, 0.179);
+    border-right: 0;
+}
+.for-you-private-message .whose-send-discr {
+    font-size: 10px;
+    color: rgb(84, 84, 84);
+}
+.for-you-private-message .whose-send-name {
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.for-you-private-message .whose-send-name::after {
+    font-size: 11px;
+    font-weight: 600;
+    content: ':'
+}
+.for-you-private-message .message-text {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Ваше сообщение всем */
+.your-message {
+    align-self: flex-end;
+    display: block;
+    position: relative;
+    margin: 4px 25px;
+    padding: 5px;
+    background-color: rgba(255, 0, 0, 0.1);
+    border-radius: 4px;
+}
+.your-message::before {
+    position: absolute;
+    right: -10px;
+    content: '';
+    border: 10px solid transparent;
+    border-bottom-color: rgba(255, 0, 0, 0.1);  
+    border-left: 0;
+}
+.your-message .you-disc {
+    font-size: 10px;
+    color: rgb(84, 84, 84);
+}
+.your-message .you-text {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Остальные общие сообщения */
+.other-message {
+    align-self: flex-start;
+    display: block;
+    position: relative;
+    margin: 4px 25px;
+    padding: 5px;
+    background-color: rgba(0, 102, 255, 0.179);
+    border-radius: 4px;
+}
+.other-message::before {
+    position: absolute;
+    left: -10px;
+    content: '';
+    border: 10px solid transparent;
+    border-bottom-color: rgba(0, 102, 255, 0.179);
+    border-right: 0;
+}
+.other-message .who-send {
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.other-message .who-disc {
+    font-size: 10px;
+    color: rgb(84, 84, 84);
+}
+.other-message .what-send {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.init {
+    animation: start .7s ease;
+}
+
+@keyframes start {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-box {
+        height: 350px;
+    }
+    .other-message .what-send, .your-private-message .message-text, .for-you-private-message .message-tex,.your-message .you-text {
+        font-size: 12px
+    }
+}
